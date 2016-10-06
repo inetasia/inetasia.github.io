@@ -299,12 +299,20 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
+#header_wrap img {
+    border: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
 #project_title {
-  margin: 0;
+  margin: 30px 15px;
+  vertical-align: top;
   color: #fff;
-  font-size: 42px;
+  font-size: 23px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+  display: inline-block;
 }
 
 #project_tagline {
