@@ -323,6 +323,10 @@ Full-Width Styles
   text-shadow: #111 0px 0px 10px;
 }
 
+.buttons {
+    text-align: center;
+}
+
 #downloads {
   position: absolute;
   width: 210px;
