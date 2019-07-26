@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Inetasia Programming Test : ">
+    <meta name="robots" content="nofollow" />
+    <link rel="shortcut icon" href="favicon.png"/>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Inetasia Puppeteer Demo Page</title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+            font: 12px monospace;
+            display: none;
+        }
+        ul:nth-child(odd) {
+            display: inherit;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <img src="https://inetasia.github.io/logo-inetasia.png" />
+          <span id="project_title">Puppeteer Demo Page</span>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <p>This page is here to test your ability on how to use puppeteer. This page generates coupon codes. Please retrieve them.</p>
+        <ul>
+            <li>TESTTEST</li>
+            <li>TESTTEST</li>
+            <li>TESTTEST</li>
+        </ul>
+        <ul></ul>
+        <ul>
+            <li>TESTTEST</li>
+            <li>TESTTEST</li>
+            <li>TESTTEST</li>
+        </ul>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var possible  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                    number = 250,
+                    length = 8;
+
+                // All codes stored in this array
+                document.codes = [];
+
+                function generateCode(length) {
+                  var text = "";
+
+                  for ( var i=0; i < length; i++ ) {
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                  }
+                  if ( document.codes.indexOf(text) == -1 ) {
+                    document.codes.push(text);
+                  }else {
+                    generateCode();
+                  }
+                }
+
+                for ( var i=0; i < number; i++ ) {
+                    generateCode(length);
+                }
+                document.getElementsByTagName('ul')[1]
+
+                document.codes.forEach(function(code) {
+                    document.querySelectorAll('ul')[1].innerHTML += '<li>'+code+'</li>';
+                });
+            });
+        </script>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner"></footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-88589509-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
